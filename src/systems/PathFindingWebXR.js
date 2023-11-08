@@ -156,12 +156,12 @@ class PathFindingWebXR {
                     for (let index = 0; index < path.length; index++) {
                         points.push(path[index]);
                         navArrows[index].position.set(path[index].x, 0.2, path[index].z);
-                        navArrows[index].origin.set(path[index].x, 0.2, path[index].z);
+                        //navArrows[index].origin.set(path[index].x, 0.2, path[index].z);
                         navArrows[index].visible = true;
                     }
                     for (let unsetIndex = path.length; unsetIndex < navArrows.length; unsetIndex++) {
                         navArrows[unsetIndex].position.set(0, 0, 0);
-                        navArrows[unsetIndex].origin.set(0, 0, 0);
+                        //navArrows[unsetIndex].origin.set(0, 0, 0);
                         navArrows[unsetIndex].visible = false;
                     }
                     line.geometry.setFromPoints(points);
