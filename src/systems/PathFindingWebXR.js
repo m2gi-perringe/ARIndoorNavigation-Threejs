@@ -1,4 +1,4 @@
-import { Vector3, MeshBasicMaterial, Mesh, Group, BoxGeometry, BufferGeometry, Line, LineBasicMaterial } from "three";
+import { Vector3, MeshBasicMaterial, Mesh, Group, ArrowHelper, BoxGeometry, BufferGeometry, Line, LineBasicMaterial } from "three";
 
 import { Pathfinding } from "three-pathfinding";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
@@ -23,7 +23,7 @@ let navigationArea;
 let isStartCubeCreated = false;
 let isEndCubeCreated = false;
 
-const navCubes = [];
+const navArrows = [];
 
 class PathFindingWebXR {
     constructor(cameraParam, navigationAreaParam) {
@@ -68,14 +68,18 @@ class PathFindingWebXR {
         navigationArea.add(line);
 
         // highlight line vertices with small cubes
-        const geometry = new BoxGeometry(0.1, 0.1, 0.1);
+        const direction = new Vector3(1, 0, 0)  // direction de la flèche a définir plus tard
+        const origin = new Vector3(0, 0, 0)     // origine de la flèche a définir plus tard
+        const length = 1;
+        const color = 0xff0000;
+        const geometry = new ArrowHelper(direction, origin, length, color);
         const material = new MeshBasicMaterial({ color: 0xff0000 });
         for (let index = 0; index < 20; index++) {
-            const cube = new Mesh(geometry, material);
-            cube.visible = false;
-            cube.renderOrder = 3;
-            navCubes.push(cube);
-            navigationArea.add(cube);
+            const arrow = new Mesh(geometry, material);
+            arrow.visible = false;
+            arrow.renderOrder = 3;
+            navArrows.push(arrow);
+            navigationArea.add(arrow);
         }
 
         document.getElementById("kitchenTarget").addEventListener("click", () => {
@@ -102,6 +106,7 @@ class PathFindingWebXR {
             const startMaterial = new MeshBasicMaterial({ color: 0x00ff00 });
             const startCube = new Mesh(startGeometry, startMaterial);
             startCube.position.set(3, 0.5, -2);
+            
             startCube.renderOrder = 3;
 
             navigationArea.add(startCube);
@@ -152,12 +157,12 @@ class PathFindingWebXR {
                     points.push(navStart);
                     for (let index = 0; index < path.length; index++) {
                         points.push(path[index]);
-                        navCubes[index].position.set(path[index].x, 0.2, path[index].z);
-                        navCubes[index].visible = true;
+                        navArrows[index].position.set(path[index].x, 0.2, path[index].z);
+                        navArrows[index].visible = true;
                     }
-                    for (let unsetIndex = path.length; unsetIndex < navCubes.length; unsetIndex++) {
-                        navCubes[unsetIndex].position.set(0, 0, 0);
-                        navCubes[unsetIndex].visible = false;
+                    for (let unsetIndex = path.length; unsetIndex < navArrows.length; unsetIndex++) {
+                        navArrows[unsetIndex].position.set(0, 0, 0);
+                        navArrows[unsetIndex].visible = false;
                     }
                     line.geometry.setFromPoints(points);
                 }
