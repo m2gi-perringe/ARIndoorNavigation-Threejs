@@ -68,7 +68,7 @@ class PathFindingWebXR {
         navigationArea.add(line);
 
         // highlight line vertices with small cubes
-        const boxGeometry = new BoxGeometry(1, 1, 1);
+        const boxGeometry = new BoxGeometry(0.25, 0.25, 0.25);
         const material = new MeshBasicMaterial( {color: 0xff0000} ); 
         for (let index = 0; index < 20; index++) {
             const box = new Mesh(boxGeometry, material);
