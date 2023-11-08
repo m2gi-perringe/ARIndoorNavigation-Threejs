@@ -68,16 +68,14 @@ class PathFindingWebXR {
         navigationArea.add(line);
 
         // highlight line vertices with small cubes
-        const direction = new Vector3(1, 0, 0)  // direction de la flèche a définir plus tard
-        const origin = new Vector3(0, 0, 0)  
-        const length = 10;
-        const color = 0xff0000;
-        const arrow = new ArrowHelper(direction, origin, length, color);
+        const boxGeometry = new BoxGeometry(1, 1, 1);
+        const material = new THREE.MeshBasicMaterial( {color: 0xff0000} ); 
         for (let index = 0; index < 20; index++) {
-            arrow.visible = false;
-            arrow.renderOrder = 3;
-            navArrows.push(arrow);
-            navigationArea.add(arrow);
+            const box = new Mesh(boxGeometry, material);
+            box.visible = false;
+            box.renderOrder = 3;
+            navArrows.push(box);
+            navigationArea.add(box);
         }
 
         document.getElementById("kitchenTarget").addEventListener("click", () => {
@@ -156,7 +154,6 @@ class PathFindingWebXR {
                     for (let index = 0; index < path.length; index++) {
                         points.push(path[index]);
                         navArrows[index].position.set(path[index].x, 0.2, path[index].z);
-                        //direction : setdirection(Vector3().sub(navArrows[index-1].position, navArrows[index].position).normalize());
                         navArrows[index].visible = true;
                     }
                     for (let unsetIndex = path.length; unsetIndex < navArrows.length; unsetIndex++) {
