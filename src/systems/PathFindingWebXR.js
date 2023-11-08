@@ -72,10 +72,8 @@ class PathFindingWebXR {
         const origin = new Vector3(0, 0, 0)     // origine de la flèche a définir plus tard
         const length = 1;
         const color = 0xff0000;
-        const geometry = new ArrowHelper(direction, origin, length, color);
-        const material = new MeshBasicMaterial({ color: 0xff0000 });
+        const arrow = new ArrowHelper(direction, origin, length, color);
         for (let index = 0; index < 20; index++) {
-            const arrow = new Mesh(geometry, material);
             arrow.visible = false;
             arrow.renderOrder = 3;
             navArrows.push(arrow);
@@ -106,7 +104,7 @@ class PathFindingWebXR {
             const startMaterial = new MeshBasicMaterial({ color: 0x00ff00 });
             const startCube = new Mesh(startGeometry, startMaterial);
             startCube.position.set(3, 0.5, -2);
-            
+
             startCube.renderOrder = 3;
 
             navigationArea.add(startCube);
