@@ -3,7 +3,7 @@ import CasualFlapMapImageUrl from "/CasualFlatMap.png";
 
 function setupNavigationAreaGeometry() {
     // create occluder material
-    const occluderMaterial = new MeshStandardMaterial({ color: 0x00ff00 });
+    const occluderMaterial = new MeshStandardMaterial({ color: 0xffc990 });
     //occluderMaterial.colorWrite = false;
 
     // create room map

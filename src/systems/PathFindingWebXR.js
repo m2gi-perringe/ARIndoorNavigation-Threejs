@@ -101,7 +101,7 @@ class PathFindingWebXR {
         // visual for better debugging
         if (!isStartCubeCreated) {
             const startGeometry = new BoxGeometry(0.2, 0.2, 0.2);
-            const startMaterial = new MeshBasicMaterial({ color: 0x00ff00 });
+            const startMaterial = new MeshBasicMaterial({ color: 0x90c8ff });
             const startCube = new Mesh(startGeometry, startMaterial);
             startCube.position.set(3, 0.5, -2);
 
@@ -122,7 +122,7 @@ class PathFindingWebXR {
         // visual for better debugging
         if (!isEndCubeCreated) {
             const targetGeometry = new BoxGeometry(0.2, 0.2, 0.2);
-            const targetMaterial = new MeshBasicMaterial({ color: 0x0000ff });
+            const targetMaterial = new MeshBasicMaterial({ color: 0x90c8ff });
             const targetCube = new Mesh(targetGeometry, targetMaterial);
             targetCube.position.set(0, 0.5, -2);
             targetCube.renderOrder = 3;
@@ -156,10 +156,12 @@ class PathFindingWebXR {
                     for (let index = 0; index < path.length; index++) {
                         points.push(path[index]);
                         navArrows[index].position.set(path[index].x, 0.2, path[index].z);
+                        navArrows[index].origin.set(path[index].x, 0.2, path[index].z);
                         navArrows[index].visible = true;
                     }
                     for (let unsetIndex = path.length; unsetIndex < navArrows.length; unsetIndex++) {
                         navArrows[unsetIndex].position.set(0, 0, 0);
+                        navArrows[unsetIndex].origin.set(0, 0, 0);
                         navArrows[unsetIndex].visible = false;
                     }
                     line.geometry.setFromPoints(points);
