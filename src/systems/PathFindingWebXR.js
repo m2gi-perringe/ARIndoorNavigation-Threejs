@@ -69,8 +69,8 @@ class PathFindingWebXR {
 
         // highlight line vertices with small cubes
         const direction = new Vector3(1, 0, 0)  // direction de la flèche a définir plus tard
-        const origin = new Vector3(0, 0, 0)     // origine de la flèche a définir plus tard
-        const length = 1;
+        const origin = new Vector3(0, 0, 0)  
+        const length = 10;
         const color = 0xff0000;
         const arrow = new ArrowHelper(direction, origin, length, color);
         for (let index = 0; index < 20; index++) {
@@ -156,12 +156,11 @@ class PathFindingWebXR {
                     for (let index = 0; index < path.length; index++) {
                         points.push(path[index]);
                         navArrows[index].position.set(path[index].x, 0.2, path[index].z);
-                        //navArrows[index].origin.set(path[index].x, 0.2, path[index].z);
+                        //direction : setdirection(Vector3().sub(navArrows[index-1].position, navArrows[index].position).normalize());
                         navArrows[index].visible = true;
                     }
                     for (let unsetIndex = path.length; unsetIndex < navArrows.length; unsetIndex++) {
                         navArrows[unsetIndex].position.set(0, 0, 0);
-                        //navArrows[unsetIndex].origin.set(0, 0, 0);
                         navArrows[unsetIndex].visible = false;
                     }
                     line.geometry.setFromPoints(points);
