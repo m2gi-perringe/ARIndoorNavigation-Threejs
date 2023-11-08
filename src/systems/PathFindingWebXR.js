@@ -69,7 +69,7 @@ class PathFindingWebXR {
 
         // highlight line vertices with small cubes
         const boxGeometry = new BoxGeometry(1, 1, 1);
-        const material = new THREE.MeshBasicMaterial( {color: 0xff0000} ); 
+        const material = new MeshBasicMaterial( {color: 0xff0000} ); 
         for (let index = 0; index < 20; index++) {
             const box = new Mesh(boxGeometry, material);
             box.visible = false;
