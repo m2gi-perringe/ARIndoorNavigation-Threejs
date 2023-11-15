@@ -101,7 +101,7 @@ class PathFindingWebXR {
             const startGeometry = new BoxGeometry(0.2, 0.2, 0.2);
             const startMaterial = new MeshBasicMaterial({ color: 0x90c8ff });
             const startCube = new Mesh(startGeometry, startMaterial);
-            startCube.position.set(3, 0.5, -2);
+            startCube.position.set(11.6, 0.5, 5.1);
 
             startCube.renderOrder = 3;
 
@@ -122,7 +122,7 @@ class PathFindingWebXR {
             const targetGeometry = new BoxGeometry(0.2, 0.2, 0.2);
             const targetMaterial = new MeshBasicMaterial({ color: 0x90c8ff });
             const targetCube = new Mesh(targetGeometry, targetMaterial);
-            targetCube.position.set(0, 0.5, -2);
+            targetCube.position.set(1, 0.5, 6);
             targetCube.renderOrder = 3;
 
             navigationArea.add(targetCube);
