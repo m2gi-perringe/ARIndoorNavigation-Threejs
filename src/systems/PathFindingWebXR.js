@@ -61,11 +61,19 @@ class PathFindingWebXR {
         );
 
         // navigation line
-        const lineGeometry = new BufferGeometry();
-        const lineMaterial = new LineBasicMaterial({ color: 0xff0000, linewidth: 12 });
-        line = new Line(lineGeometry, lineMaterial);
-        line.renderOrder = 3;
-        navigationArea.add(line);
+        // const lineGeometry = new BufferGeometry();
+        // const lineMaterial = new LineBasicMaterial({ color: 0xff0000, linewidth: 12 });
+        // line = new Line(lineGeometry, lineMaterial);
+        // line.renderOrder = 3;
+        // navigationArea.add(line);
+
+        // const lineGeometry = new BufferGeometry();
+        // const lineMaterial = new LineBasicMaterial( { color: 0xff0000 } );
+        // const positions = new Float32Array( 500 * 3 ); // 3 vertices per point
+        // lineGeometry.setAttribute( 'position', new BufferAttribute( positions, 3 ) );
+        // line = new Line( lineGeometry,  lineMaterial );
+        // line.renderOrder = 3;
+        // navigationArea.add(line);
 
         // highlight line vertices with small cubes
         const boxGeometry = new BoxGeometry(0.25, 0.25, 0.25);
@@ -130,6 +138,19 @@ class PathFindingWebXR {
         }
     }
 
+    updatePositions(points) {
+
+        const positionAttribute = line.geometry.getAttribute( 'position' );
+    
+        for ( let i = 0, l = points.length; i < l; i ++ ) {
+            positionAttribute.setXYZ(i, points[i].x, points[i].y, points[i].z);
+        }
+        console.log("points", points);
+        console.log("line",line);
+        positionAttribute.needsUpdate = true;
+    
+    }
+
     calculatePath(timestamp, frame, imageTracking) {
         if (frame) {
             const markerWorldPosition = imageTracking.getMarkerWorldPosition();
@@ -160,7 +181,17 @@ class PathFindingWebXR {
                         navArrows[unsetIndex].position.set(0, 0, 0);
                         navArrows[unsetIndex].visible = false;
                     }
+
+                    navigationArea.remove(line);
+                    const lineGeometry = new BufferGeometry();
+                    const lineMaterial = new LineBasicMaterial({ color: 0xff0000, linewidth: 50 });
+                    line = new Line(lineGeometry, lineMaterial);
+                    line.renderOrder = 3;
                     line.geometry.setFromPoints(points);
+                    navigationArea.add(line);
+
+                    // this.updatePositions(points);
+
                 }
             }
         }
