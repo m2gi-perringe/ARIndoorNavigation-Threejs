@@ -46,7 +46,7 @@ function setupNavigationAreaGeometry() {
     // navigationArea.add(createWallElement(new Vector3(0.3, 1.5, 1.5), new Vector3(0, 0, 0), new Vector3(0.2, 3, 0.2), occluderMaterial6));
 
     //1
-    navigationArea.add(createWallElement(new Vector3(0,1.5,-3.5), new Vector3(0, 0, 0), new Vector3(0.1,3,7), occluderMaterial));
+    /*navigationArea.add(createWallElement(new Vector3(0,1.5,-3.5), new Vector3(0, 0, 0), new Vector3(0.1,3,7), occluderMaterial));
     //2
     navigationArea.add(createWallElement(new Vector3(4.5,1.5,-7), new Vector3(0, 0, 0), new Vector3(9,3,0.1), occluderMaterial));
     //3
@@ -73,16 +73,38 @@ function setupNavigationAreaGeometry() {
     navigationArea.add(createWallElement(new Vector3(0,1.5,-7.9), new Vector3(0, 0, 0), new Vector3(0.1,3,1.8), occluderMaterial));
     //14
     navigationArea.add(createWallElement(new Vector3(19.4,1.5,-7.9), new Vector3(0, 0, 0), new Vector3(0.1,3,1.8), occluderMaterial));
+    */
+
+    //1
+    navigationArea.add(createWallElement(new Vector3(0,1.4,3.47), new Vector3(0, 0, 0), new Vector3(0.1,2.8,6.94), occluderMaterial));
+    //2
+    navigationArea.add(createWallElement(new Vector3(3.83,1.4,6.94), new Vector3(0, 0, 0), new Vector3(7.66,2.8,0.1), occluderMaterial));
+    //3
+    navigationArea.add(createWallElement(new Vector3(7.66,1.4,3.47), new Vector3(0, 0, 0), new Vector3(0.1,2.8,6.94), occluderMaterial));
+    //4
+    navigationArea.add(createWallElement(new Vector3(3.06,1.4,0), new Vector3(0, 0, 0), new Vector3(6.12,2.8,0.1), occluderMaterial));
+    //5
+    navigationArea.add(createWallElement(new Vector3(7.34,1.4,0), new Vector3(0, 0, 0), new Vector3(0.63,2.8,0.1), occluderMaterial));
+    //6
+    navigationArea.add(createWallElement(new Vector3(8.62,1.4,0.75), new Vector3(0, 0, 0), new Vector3(1.92,2.8,0.1), occluderMaterial));
+    //7
+    navigationArea.add(createWallElement(new Vector3(9.58,1.4,0.37), new Vector3(0, 0, 0), new Vector3(0.1,2.8,0.75), occluderMaterial));
+    //8
+    navigationArea.add(createWallElement(new Vector3(13.2,1.4,0), new Vector3(0, 0, 0), new Vector3(5.42,2.8,0.1), occluderMaterial));
+    //9
+    navigationArea.add(createWallElement(new Vector3(15.91,1.4,3.47), new Vector3(0, 0, 0), new Vector3(0.1,2.8,6.94), occluderMaterial));
+    //10
+    navigationArea.add(createWallElement(new Vector3(11.78, 1.4, 6.94), new Vector3(0, 0, 0), new Vector3(8.25,2.8,0.1), occluderMaterial));
 
     // create floor
     const floorGeometry = new PlaneGeometry(20, 9);
-    floorGeometry.translate(10, 4.5, 0);
+    //floorGeometry.translate(10, 4.5, 0);
     const floorTexture = new TextureLoader().load(CasualFlapMapImageUrl);
     const floorMaterial = new MeshBasicMaterial({ map: floorTexture });
     const floorPlaneMesh = new Mesh(floorGeometry, floorMaterial);
     floorPlaneMesh.rotateX(MathUtils.degToRad(270));
     floorPlaneMesh.renderOrder = 3;
-    floorPlaneMesh.visible = false;
+    //floorPlaneMesh.visible = false;
     navigationArea.add(floorPlaneMesh);
 
     // navigation area parent for easier placement
