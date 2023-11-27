@@ -48,7 +48,14 @@ class PathFindingWebXR {
                         navMeshGeometry = child;
                     }
                 });
-                navMeshGeometry.visible = false;
+
+                // Change color of navmesh
+                var newMaterial = new MeshBasicMaterial({color: 0xfc0303});
+                navMesh.traverse((o) => {
+                if (o.isMesh) o.material = newMaterial;
+                });
+
+                navMeshGeometry.visible = true;
 
                 zoneData = Pathfinding.createZone(navMeshGeometry.geometry);
                 pathfinding.setZoneData(zoneName, zoneData);
