@@ -13,7 +13,7 @@ let zoneData;
 let startPosition = new Vector3();
 let targetPosition = new Vector3();
 
-let tempTargetPosition = new Vector3(11.6, 0.5, -5.1);
+let tempTargetPosition = new Vector3(8.26, 0.5, 1.5);
 
 let line;
 
