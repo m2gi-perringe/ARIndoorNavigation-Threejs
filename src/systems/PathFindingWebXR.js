@@ -165,7 +165,7 @@ class PathFindingWebXR {
             if (markerWorldPosition != zeroVector) {
                 // calculate "offseted" positions, as navigation mesh can't be moved/rotated
                 const cameraPosition = navigationArea.worldToLocal(camera.position);
-                const navStart = new Vector3(cameraPosition.x, 0.5, cameraPosition.z);
+                const navStart = new Vector3(cameraPosition.x, cameraPosition.y, cameraPosition.z);
                 // set endposition to current target
                 const navEnd = new Vector3(tempTargetPosition.x, tempTargetPosition.y, tempTargetPosition.z);
 
