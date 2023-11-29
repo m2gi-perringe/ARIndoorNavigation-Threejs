@@ -4,7 +4,7 @@ import CasualFlapMapImageUrl from "/CasualFlatMap.png";
 function setupNavigationAreaGeometry() {
     // create occluder material
     const occluderMaterial = new MeshStandardMaterial({ color: 0xffc990 });
-    //occluderMaterial.colorWrite = false;
+    occluderMaterial.colorWrite = false;
 
     // create room map
     const navigationArea = new Group();
@@ -106,9 +106,9 @@ function setupNavigationAreaGeometry() {
     const floorTexture = new TextureLoader().load(CasualFlapMapImageUrl);
     const floorMaterial = new MeshBasicMaterial({ map: floorTexture });
     const floorPlaneMesh = new Mesh(floorGeometry, floorMaterial);
-    floorPlaneMesh.rotateX(MathUtils.degToRad(270));
+    floorPlaneMesh.rotateX(MathUtils.degToRad(all270));
     floorPlaneMesh.renderOrder = 3;
-    //floorPlaneMesh.visible = false;
+    floorPlaneMesh.visible = false;
     navigationArea.add(floorPlaneMesh);
 
     // navigation area parent for easier placement
