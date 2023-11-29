@@ -95,11 +95,11 @@ class PathFindingWebXR {
 
         document.getElementById("kitchenTarget").addEventListener("click", () => {
             console.log("kitchen selected");
-            tempTargetPosition.set(1, 0.5, -6);
+            tempTargetPosition.set(1, 0.5, 6);
         });
         document.getElementById("livingRoomTarget").addEventListener("click", () => {
             console.log("livingRoom selected");
-            tempTargetPosition.set(11.6, 0.5, -5.1);
+            tempTargetPosition.set(11.6, 0.5, 5.1);
         });
     }
 
