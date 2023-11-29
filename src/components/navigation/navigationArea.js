@@ -95,6 +95,10 @@ function setupNavigationAreaGeometry() {
     navigationArea.add(createWallElement(new Vector3(15.91,1.4,3.47), new Vector3(0, 0, 0), new Vector3(0.1,2.8,6.94), occluderMaterial));
     //10
     navigationArea.add(createWallElement(new Vector3(11.78, 1.4, 6.94), new Vector3(0, 0, 0), new Vector3(8.25,2.8,0.1), occluderMaterial));
+    
+    const occluderMaterial4 = new MeshStandardMaterial({ color: 0x030bfc });
+    navigationArea.add(createWallElement(new Vector3(1, 1.5, 1), new Vector3(0, 0, 0), new Vector3(0.2, 3, 0.2), occluderMaterial4));
+    navigationArea.add(createWallElement(new Vector3(14.91, 1.5, 1), new Vector3(0, 0, 0), new Vector3(0.2, 3, 0.2), occluderMaterial4));
 
     // create floor
     const floorGeometry = new PlaneGeometry(20, 9);
