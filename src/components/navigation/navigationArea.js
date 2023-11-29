@@ -106,7 +106,7 @@ function setupNavigationAreaGeometry() {
     const floorTexture = new TextureLoader().load(CasualFlapMapImageUrl);
     const floorMaterial = new MeshBasicMaterial({ map: floorTexture });
     const floorPlaneMesh = new Mesh(floorGeometry, floorMaterial);
-    floorPlaneMesh.rotateX(MathUtils.degToRad(all270));
+    floorPlaneMesh.rotateX(MathUtils.degToRad(270));
     floorPlaneMesh.renderOrder = 3;
     floorPlaneMesh.visible = false;
     navigationArea.add(floorPlaneMesh);
