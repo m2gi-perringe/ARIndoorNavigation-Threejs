@@ -55,7 +55,7 @@ class PathFindingWebXR {
                 if (o.isMesh) o.material = newMaterial;
                 });
 
-                //navMeshGeometry.visible = false;
+                navMeshGeometry.visible = false;
 
                 zoneData = Pathfinding.createZone(navMeshGeometry.geometry);
                 pathfinding.setZoneData(zoneName, zoneData);
