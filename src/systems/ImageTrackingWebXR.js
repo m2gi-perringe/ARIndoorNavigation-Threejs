@@ -105,7 +105,7 @@ class ImageTrackingWebXR {
                         markerWorldRotation.setFromQuaternion(markerWorldQuaternion);
 
                         // offset to start in the middle of the living room
-                        navigationArea.position.set(14.91, 0.5, 1);
+                        navigationArea.position.set(-11.6, 0.5, 5.1);
                     }
                     if (imageIndex == 1) {
                         earthNFTMesh.visible = true;
@@ -118,7 +118,7 @@ class ImageTrackingWebXR {
                         markerWorldRotation.setFromQuaternion(markerWorldQuaternion);
 
                         // setting the offset for the specific marker
-                        navigationArea.position.set(1, 0.5, 1);
+                        navigationArea.position.set(-1, 0.5, 6);
                     }
                     console.log("Image target world position", imageIndex, markerWorldPosition);
                     console.log("Image target world rotation", imageIndex, markerWorldRotation);

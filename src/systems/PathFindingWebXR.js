@@ -95,11 +95,11 @@ class PathFindingWebXR {
 
         document.getElementById("kitchenTarget").addEventListener("click", () => {
             console.log("kitchen selected");
-            tempTargetPosition.set(1, 0.5, 1);
+            tempTargetPosition.set(1, 0.5, -6);
         });
         document.getElementById("livingRoomTarget").addEventListener("click", () => {
             console.log("livingRoom selected");
-            tempTargetPosition.set(14.91, 0.5, 1);
+            tempTargetPosition.set(11.6, 0.5, -5.1);
         });
     }
 
@@ -116,7 +116,7 @@ class PathFindingWebXR {
             const startGeometry = new BoxGeometry(0.2, 0.2, 0.2);
             const startMaterial = new MeshBasicMaterial({ color: 0x90c8ff });
             const startCube = new Mesh(startGeometry, startMaterial);
-            startCube.position.set(14.91, 0.5, 1);
+            startCube.position.set(11.6, 0.5, -5.1);
 
             startCube.renderOrder = 3;
 
@@ -137,7 +137,7 @@ class PathFindingWebXR {
             const targetGeometry = new BoxGeometry(0.2, 0.2, 0.2);
             const targetMaterial = new MeshBasicMaterial({ color: 0x90c8ff });
             const targetCube = new Mesh(targetGeometry, targetMaterial);
-            targetCube.position.set(1, 0.5, 1);
+            targetCube.position.set(1, 0.5, -6);
             targetCube.renderOrder = 3;
 
             navigationArea.add(targetCube);
