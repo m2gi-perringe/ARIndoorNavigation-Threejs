@@ -118,7 +118,7 @@ class ImageTrackingWebXR {
                         markerWorldRotation.setFromQuaternion(markerWorldQuaternion);
 
                         // setting the offset for the specific marker
-                        navigationArea.position.set(-3, 0.2, -3);
+                        navigationArea.position.set(-1, 0.2, -1);
                     }
                     console.log("Image target world position", imageIndex, markerWorldPosition);
                     console.log("Image target world rotation", imageIndex, markerWorldRotation);
