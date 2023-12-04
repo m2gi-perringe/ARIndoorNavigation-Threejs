@@ -99,7 +99,7 @@ function setupNavigationAreaGeometry() {
     const occluderMaterial4 = new MeshStandardMaterial({ color: 0x030bfc });
     //213
     //navigationArea.add(createWallElement(new Vector3(1, 1.5, 1), new Vector3(0, 0, 0), new Vector3(0.2, 3, 0.2), occluderMaterial4));
-    //214
+    //211
     //navigationArea.add(createWallElement(new Vector3(12, 1.5, 5), new Vector3(0, 0, 0), new Vector3(0.2, 3, 0.2), occluderMaterial4));
     //Escaliers
     //navigationArea.add(createWallElement(new Vector3(25, 1.5, -1), new Vector3(0, 0, 0), new Vector3(0.2, 3, 0.2), occluderMaterial4));

@@ -99,10 +99,10 @@ class PathFindingWebXR {
         document.getElementById("room213Target").addEventListener("click", () => {
             console.log("room 213 selected");
             document.getElementById("room213Target").setAttribute("hidden", "true")
-            document.getElementById("room214Target").setAttribute("hidden", "true")
+            document.getElementById("room211Target").setAttribute("hidden", "true")
             document.getElementById("stairsTarget").setAttribute("hidden", "true")
             tempTargetPosition.set(1, 0.2, 1);
-            // J'ai scanné le marker de la 214, donc je vais en 213
+            // J'ai scanné le marker de la 211, donc je vais en 213
             if (navigationArea.position.x === -1 && navigationArea.position.z === -1) {
                 // J'ai scanné le marker de la 213, donc j'y suis déjà
                 const points = [];
@@ -114,7 +114,7 @@ class PathFindingWebXR {
                 line.geometry.setFromPoints(points);
                 navigationArea.add(line);
             } else if (navigationArea.position.x === -12 && navigationArea.position.z === -5) {
-                // J'ai scanné le marker de la 214, donc je vais en 213
+                // J'ai scanné le marker de la 211, donc je vais en 213
                 const points = [];
                 points.push({x: 12, y: 0.2, z: 5});
                 points.push({x: 12, y: 0.2, z: 0.5});
@@ -132,15 +132,15 @@ class PathFindingWebXR {
             }
         });
 
-        // On veut aller en 214
-        document.getElementById("room214Target").addEventListener("click", () => {
-            console.log("room 214 selected");
+        // On veut aller en 211
+        document.getElementById("room211Target").addEventListener("click", () => {
+            console.log("room 211 selected");
             document.getElementById("room213Target").setAttribute("hidden", "true")
-            document.getElementById("room214Target").setAttribute("hidden", "true")
+            document.getElementById("room211Target").setAttribute("hidden", "true")
             document.getElementById("stairsTarget").setAttribute("hidden", "true")
             tempTargetPosition.set(12, 0.2, 5);
             if (navigationArea.position.x === -1 && navigationArea.position.z === -1) {
-                // J'ai scanné le marker de la 213, donc je vais en 214
+                // J'ai scanné le marker de la 213, donc je vais en 211
                 const points = [];
                 points.push({x: 12, y: 0.2, z: 5});
                 points.push({x: 12, y: 0.2, z: 0.5});
@@ -156,7 +156,7 @@ class PathFindingWebXR {
                 line.geometry.setFromPoints(points);
                 navigationArea.add(line);
             } else if (navigationArea.position.x === -12 && navigationArea.position.z === -5) {
-                // J'ai scanné le marker de la 214, donc j'y suis déjà
+                // J'ai scanné le marker de la 211, donc j'y suis déjà
                 const points = [];
                 points.push({x: 12, y: 0.2, z: 5});
                 const lineGeometry = new BufferGeometry();
@@ -172,7 +172,7 @@ class PathFindingWebXR {
         document.getElementById("stairsTarget").addEventListener("click", () => {
             console.log("stairs selected");
             document.getElementById("room213Target").setAttribute("hidden", "true")
-            document.getElementById("room214Target").setAttribute("hidden", "true")
+            document.getElementById("room211Target").setAttribute("hidden", "true")
             document.getElementById("stairsTarget").setAttribute("hidden", "true")
             tempTargetPosition.set(25, 0.2, -1);
             if (navigationArea.position.x === -1 && navigationArea.position.z === -1) {
@@ -192,7 +192,7 @@ class PathFindingWebXR {
                 line.geometry.setFromPoints(points);
                 navigationArea.add(line);
             } else if (navigationArea.position.x === -12 && navigationArea.position.z === -5) {
-                // J'ai scanné le marker de la 214, donc je vais à l'escalier
+                // J'ai scanné le marker de la 211, donc je vais à l'escalier
                 const points = [];
                 points.push({x: 12, y: 0.2, z: 5});
                 points.push({x: 12, y: 0.2, z: 0.5});
